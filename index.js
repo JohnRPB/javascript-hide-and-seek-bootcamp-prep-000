@@ -27,6 +27,8 @@ function deepestChild() {
   // node
   let nextNode = node.children[0]
 
+  // we want to stop looping when the next node falls off the tree; hence, it's
+  // smarter to check whether *nextNode* is undefined
   while (nextNode) {
     node = nextNode
     nextNode = node.children[0] // just node.children returns a node list
