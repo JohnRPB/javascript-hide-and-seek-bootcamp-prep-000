@@ -23,11 +23,13 @@ function increaseRankBy(n) {
 
 function deepestChild() {
   let node = document.getElementById('grand-node')
-  let nextNode = node.children
+  // just node.children returns a node list, but we know there will be just one
+  // node
+  let nextNode = node.children[0]
 
   while (nextNode) {
     node = nextNode
-    nextNode = node.children
+    nextNode = node.children[0] // just node.children returns a node list
   }
 
   return node
